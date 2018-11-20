@@ -1,6 +1,18 @@
 :host {
     display: block;
     h2 {
-        margin: 64px;
+        margin-top: 64px;
+        margin-left: 64px;
     }
+
+    form {
+        margin-left: 64px;
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+      
+      mat-form-field {
+        width: 100%;
+      }
 }
