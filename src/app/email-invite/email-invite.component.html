@@ -1,6 +1,12 @@
 <form>
   <mat-form-field>
-      <input matInput placeholder="email">
+    <input [formControl]="EmailFormControl" matInput placeholder="email">
+    <mat-error *ngIf="EmailFormControl.hasError('email') && !EmailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="EmailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
-  <button mat-stroked-button>Submit</button>
+  <button id="invite-button" mat-stroked-button (click)="HandleEmailInvite(EmailFormControl.value)">Submit</button>
 </form>
